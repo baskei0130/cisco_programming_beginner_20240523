@@ -1,0 +1,15 @@
+hostname n9kv-3
+feature lacp
+no spanning-tree vlan 1-3967
+vlan 1,100-199
+interface Ethernet 1/63-64
+  channel-group 4096 mode active
+
+interface port-channel4096
+  switchport mode trunk
+  switchport trunk allowed vlan 100-199
+
+interface Ethernet 1/1
+  switchport mode access
+  switchport access vlan 100
+copy running-config startup-config

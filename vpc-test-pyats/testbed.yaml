@@ -1,0 +1,581 @@
+testbed:
+  name: 'Programmability(vPC)'
+devices:
+  terminal_server:
+    os: linux
+    type: server
+    credentials:
+      default:
+        username: {change-this}
+        password: {change-this}
+    connections:
+      cli:
+        protocol: ssh
+        ip: {change-this}
+        port: 22
+  n9kv-1:
+    os: nxos
+    type: switch
+    platform: n9k
+    credentials:
+      default:
+        username: cisco
+        password: cisco
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        proxy: terminal_server
+        command: 'open /Programmability(vPC)/n9kv-1/0'
+  n9kv-2:
+    os: nxos
+    type: switch
+    platform: n9k
+    credentials:
+      default:
+        username: cisco
+        password: cisco
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        proxy: terminal_server
+        command: 'open /Programmability(vPC)/n9kv-2/0'
+  router:
+    os: ios
+    type: router
+    platform: iosv
+    credentials:
+      default:
+        username: cisco
+        password: cisco
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        proxy: terminal_server
+        command: 'open /Programmability(vPC)/router/0'
+  pc:
+    os: ios
+    type: router
+    platform: iosv
+    credentials:
+      default:
+        username: cisco
+        password: cisco
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        proxy: terminal_server
+        command: 'open /Programmability(vPC)/pc/0'
+  n9kv-3:
+    os: nxos
+    type: switch
+    platform: n9k
+    credentials:
+      default:
+        username: cisco
+        password: cisco
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        proxy: terminal_server
+        command: 'open /Programmability(vPC)/n9kv-3/0'
+topology:
+  n9kv-1:
+    interfaces:
+      Loopback0:
+        type: loopback
+      mgmt0:
+        link: 1404eec0-0888-4e83-8382-e8335efe5b19
+        type: ethernet
+      Ethernet1/1:
+        link: d658498f-3d1e-4cf0-93d1-dedd13cad4b0
+        type: ethernet
+      Ethernet1/2:
+        type: ethernet
+      Ethernet1/3:
+        type: ethernet
+      Ethernet1/4:
+        type: ethernet
+      Ethernet1/5:
+        type: ethernet
+      Ethernet1/6:
+        type: ethernet
+      Ethernet1/7:
+        type: ethernet
+      Ethernet1/8:
+        type: ethernet
+      Ethernet1/9:
+        type: ethernet
+      Ethernet1/10:
+        type: ethernet
+      Ethernet1/11:
+        type: ethernet
+      Ethernet1/12:
+        type: ethernet
+      Ethernet1/13:
+        type: ethernet
+      Ethernet1/14:
+        type: ethernet
+      Ethernet1/15:
+        type: ethernet
+      Ethernet1/16:
+        type: ethernet
+      Ethernet1/17:
+        type: ethernet
+      Ethernet1/18:
+        type: ethernet
+      Ethernet1/19:
+        type: ethernet
+      Ethernet1/20:
+        type: ethernet
+      Ethernet1/21:
+        type: ethernet
+      Ethernet1/22:
+        type: ethernet
+      Ethernet1/23:
+        type: ethernet
+      Ethernet1/24:
+        type: ethernet
+      Ethernet1/25:
+        type: ethernet
+      Ethernet1/26:
+        type: ethernet
+      Ethernet1/27:
+        type: ethernet
+      Ethernet1/28:
+        type: ethernet
+      Ethernet1/29:
+        type: ethernet
+      Ethernet1/30:
+        type: ethernet
+      Ethernet1/31:
+        type: ethernet
+      Ethernet1/32:
+        type: ethernet
+      Ethernet1/33:
+        type: ethernet
+      Ethernet1/34:
+        type: ethernet
+      Ethernet1/35:
+        type: ethernet
+      Ethernet1/36:
+        type: ethernet
+      Ethernet1/37:
+        type: ethernet
+      Ethernet1/38:
+        type: ethernet
+      Ethernet1/39:
+        type: ethernet
+      Ethernet1/40:
+        type: ethernet
+      Ethernet1/41:
+        type: ethernet
+      Ethernet1/42:
+        type: ethernet
+      Ethernet1/43:
+        type: ethernet
+      Ethernet1/44:
+        type: ethernet
+      Ethernet1/45:
+        type: ethernet
+      Ethernet1/46:
+        type: ethernet
+      Ethernet1/47:
+        type: ethernet
+      Ethernet1/48:
+        type: ethernet
+      Ethernet1/49:
+        type: ethernet
+      Ethernet1/50:
+        type: ethernet
+      Ethernet1/51:
+        type: ethernet
+      Ethernet1/52:
+        type: ethernet
+      Ethernet1/53:
+        type: ethernet
+      Ethernet1/54:
+        type: ethernet
+      Ethernet1/55:
+        type: ethernet
+      Ethernet1/56:
+        type: ethernet
+      Ethernet1/57:
+        type: ethernet
+      Ethernet1/58:
+        type: ethernet
+      Ethernet1/59:
+        type: ethernet
+      Ethernet1/60:
+        type: ethernet
+      Ethernet1/61:
+        type: ethernet
+      Ethernet1/62:
+        link: 5adf6bcf-fa23-4766-83dc-b2448fd6344b
+        type: ethernet
+      Ethernet1/63:
+        link: 70bbc1d7-9167-44cb-8d39-e652653e986b
+        type: ethernet
+      Ethernet1/64:
+        link: d3cf7a50-1ef4-4a57-bb89-8019f42bc6ee
+        type: ethernet
+  n9kv-2:
+    interfaces:
+      Loopback0:
+        type: loopback
+      mgmt0:
+        link: 1404eec0-0888-4e83-8382-e8335efe5b19
+        type: ethernet
+      Ethernet1/1:
+        link: 46e4d236-9c73-401c-ac25-8d3dbf0cffe4
+        type: ethernet
+      Ethernet1/2:
+        type: ethernet
+      Ethernet1/3:
+        type: ethernet
+      Ethernet1/4:
+        type: ethernet
+      Ethernet1/5:
+        type: ethernet
+      Ethernet1/6:
+        type: ethernet
+      Ethernet1/7:
+        type: ethernet
+      Ethernet1/8:
+        type: ethernet
+      Ethernet1/9:
+        type: ethernet
+      Ethernet1/10:
+        type: ethernet
+      Ethernet1/11:
+        type: ethernet
+      Ethernet1/12:
+        type: ethernet
+      Ethernet1/13:
+        type: ethernet
+      Ethernet1/14:
+        type: ethernet
+      Ethernet1/15:
+        type: ethernet
+      Ethernet1/16:
+        type: ethernet
+      Ethernet1/17:
+        type: ethernet
+      Ethernet1/18:
+        type: ethernet
+      Ethernet1/19:
+        type: ethernet
+      Ethernet1/20:
+        type: ethernet
+      Ethernet1/21:
+        type: ethernet
+      Ethernet1/22:
+        type: ethernet
+      Ethernet1/23:
+        type: ethernet
+      Ethernet1/24:
+        type: ethernet
+      Ethernet1/25:
+        type: ethernet
+      Ethernet1/26:
+        type: ethernet
+      Ethernet1/27:
+        type: ethernet
+      Ethernet1/28:
+        type: ethernet
+      Ethernet1/29:
+        type: ethernet
+      Ethernet1/30:
+        type: ethernet
+      Ethernet1/31:
+        type: ethernet
+      Ethernet1/32:
+        type: ethernet
+      Ethernet1/33:
+        type: ethernet
+      Ethernet1/34:
+        type: ethernet
+      Ethernet1/35:
+        type: ethernet
+      Ethernet1/36:
+        type: ethernet
+      Ethernet1/37:
+        type: ethernet
+      Ethernet1/38:
+        type: ethernet
+      Ethernet1/39:
+        type: ethernet
+      Ethernet1/40:
+        type: ethernet
+      Ethernet1/41:
+        type: ethernet
+      Ethernet1/42:
+        type: ethernet
+      Ethernet1/43:
+        type: ethernet
+      Ethernet1/44:
+        type: ethernet
+      Ethernet1/45:
+        type: ethernet
+      Ethernet1/46:
+        type: ethernet
+      Ethernet1/47:
+        type: ethernet
+      Ethernet1/48:
+        type: ethernet
+      Ethernet1/49:
+        type: ethernet
+      Ethernet1/50:
+        type: ethernet
+      Ethernet1/51:
+        type: ethernet
+      Ethernet1/52:
+        type: ethernet
+      Ethernet1/53:
+        type: ethernet
+      Ethernet1/54:
+        type: ethernet
+      Ethernet1/55:
+        type: ethernet
+      Ethernet1/56:
+        type: ethernet
+      Ethernet1/57:
+        type: ethernet
+      Ethernet1/58:
+        type: ethernet
+      Ethernet1/59:
+        type: ethernet
+      Ethernet1/60:
+        type: ethernet
+      Ethernet1/61:
+        type: ethernet
+      Ethernet1/62:
+        link: 5adf6bcf-fa23-4766-83dc-b2448fd6344b
+        type: ethernet
+      Ethernet1/63:
+        link: 70bbc1d7-9167-44cb-8d39-e652653e986b
+        type: ethernet
+      Ethernet1/64:
+        link: faf58f01-e90c-45b5-8197-8556d9ed3c6d
+        type: ethernet
+  router:
+    interfaces:
+      Loopback0:
+        type: loopback
+      GigabitEthernet0/0:
+        link: d3cf7a50-1ef4-4a57-bb89-8019f42bc6ee
+        type: ethernet
+      GigabitEthernet0/1:
+        link: faf58f01-e90c-45b5-8197-8556d9ed3c6d
+        type: ethernet
+      GigabitEthernet0/2:
+        type: ethernet
+      GigabitEthernet0/3:
+        type: ethernet
+      GigabitEthernet0/4:
+        type: ethernet
+      GigabitEthernet0/5:
+        type: ethernet
+      GigabitEthernet0/6:
+        type: ethernet
+      GigabitEthernet0/7:
+        type: ethernet
+      GigabitEthernet0/8:
+        type: ethernet
+      GigabitEthernet0/9:
+        type: ethernet
+      GigabitEthernet0/10:
+        type: ethernet
+      GigabitEthernet0/11:
+        type: ethernet
+      GigabitEthernet0/12:
+        type: ethernet
+      GigabitEthernet0/13:
+        type: ethernet
+      GigabitEthernet0/14:
+        type: ethernet
+      GigabitEthernet0/15:
+        type: ethernet
+  pc:
+    interfaces:
+      Loopback0:
+        type: loopback
+      GigabitEthernet0/0:
+        type: ethernet
+      GigabitEthernet0/1:
+        type: ethernet
+      GigabitEthernet0/2:
+        type: ethernet
+      GigabitEthernet0/3:
+        type: ethernet
+      GigabitEthernet0/4:
+        type: ethernet
+      GigabitEthernet0/5:
+        type: ethernet
+      GigabitEthernet0/6:
+        type: ethernet
+      GigabitEthernet0/7:
+        type: ethernet
+      GigabitEthernet0/8:
+        type: ethernet
+      GigabitEthernet0/9:
+        type: ethernet
+      GigabitEthernet0/10:
+        type: ethernet
+      GigabitEthernet0/11:
+        type: ethernet
+      GigabitEthernet0/12:
+        type: ethernet
+      GigabitEthernet0/13:
+        type: ethernet
+      GigabitEthernet0/14:
+        type: ethernet
+      GigabitEthernet0/15:
+        link: 2044cbea-2462-4343-8ad2-5c56b73ab7cf
+        type: ethernet
+  n9kv-3:
+    interfaces:
+      Loopback0:
+        type: loopback
+      mgmt0:
+        type: ethernet
+      Ethernet1/1:
+        link: 2044cbea-2462-4343-8ad2-5c56b73ab7cf
+        type: ethernet
+      Ethernet1/2:
+        type: ethernet
+      Ethernet1/3:
+        type: ethernet
+      Ethernet1/4:
+        type: ethernet
+      Ethernet1/5:
+        type: ethernet
+      Ethernet1/6:
+        type: ethernet
+      Ethernet1/7:
+        type: ethernet
+      Ethernet1/8:
+        type: ethernet
+      Ethernet1/9:
+        type: ethernet
+      Ethernet1/10:
+        type: ethernet
+      Ethernet1/11:
+        type: ethernet
+      Ethernet1/12:
+        type: ethernet
+      Ethernet1/13:
+        type: ethernet
+      Ethernet1/14:
+        type: ethernet
+      Ethernet1/15:
+        type: ethernet
+      Ethernet1/16:
+        type: ethernet
+      Ethernet1/17:
+        type: ethernet
+      Ethernet1/18:
+        type: ethernet
+      Ethernet1/19:
+        type: ethernet
+      Ethernet1/20:
+        type: ethernet
+      Ethernet1/21:
+        type: ethernet
+      Ethernet1/22:
+        type: ethernet
+      Ethernet1/23:
+        type: ethernet
+      Ethernet1/24:
+        type: ethernet
+      Ethernet1/25:
+        type: ethernet
+      Ethernet1/26:
+        type: ethernet
+      Ethernet1/27:
+        type: ethernet
+      Ethernet1/28:
+        type: ethernet
+      Ethernet1/29:
+        type: ethernet
+      Ethernet1/30:
+        type: ethernet
+      Ethernet1/31:
+        type: ethernet
+      Ethernet1/32:
+        type: ethernet
+      Ethernet1/33:
+        type: ethernet
+      Ethernet1/34:
+        type: ethernet
+      Ethernet1/35:
+        type: ethernet
+      Ethernet1/36:
+        type: ethernet
+      Ethernet1/37:
+        type: ethernet
+      Ethernet1/38:
+        type: ethernet
+      Ethernet1/39:
+        type: ethernet
+      Ethernet1/40:
+        type: ethernet
+      Ethernet1/41:
+        type: ethernet
+      Ethernet1/42:
+        type: ethernet
+      Ethernet1/43:
+        type: ethernet
+      Ethernet1/44:
+        type: ethernet
+      Ethernet1/45:
+        type: ethernet
+      Ethernet1/46:
+        type: ethernet
+      Ethernet1/47:
+        type: ethernet
+      Ethernet1/48:
+        type: ethernet
+      Ethernet1/49:
+        type: ethernet
+      Ethernet1/50:
+        type: ethernet
+      Ethernet1/51:
+        type: ethernet
+      Ethernet1/52:
+        type: ethernet
+      Ethernet1/53:
+        type: ethernet
+      Ethernet1/54:
+        type: ethernet
+      Ethernet1/55:
+        type: ethernet
+      Ethernet1/56:
+        type: ethernet
+      Ethernet1/57:
+        type: ethernet
+      Ethernet1/58:
+        type: ethernet
+      Ethernet1/59:
+        type: ethernet
+      Ethernet1/60:
+        type: ethernet
+      Ethernet1/61:
+        type: ethernet
+      Ethernet1/62:
+        type: ethernet
+      Ethernet1/63:
+        link: 46e4d236-9c73-401c-ac25-8d3dbf0cffe4
+        type: ethernet
+      Ethernet1/64:
+        link: d658498f-3d1e-4cf0-93d1-dedd13cad4b0
+        type: ethernet

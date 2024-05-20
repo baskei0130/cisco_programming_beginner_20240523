@@ -1,0 +1,50 @@
+--- Step 1: Ping from PC to 10.0.0.1 ---
+n9kv-3 Interface Status:
+Ethernet1/64 - up
+Ethernet1/63 - up
+Ping Result:
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 7/7/7 ms
+
+--- Step 2: Ethernet1/64 Down ---
+n9kv-3 Interface Status:
+Ethernet1/64 - down
+Ethernet1/63 - up
+Ping Result:
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 8/9/10 ms
+
+--- Step 3: Ethernet1/64 Up, Ethernet1/63 Down ---
+n9kv-3 Interface Status:
+Ethernet1/64 - up
+Ethernet1/63 - down
+Ping Result:
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 5/6/10 ms
+
+--- Step 4: Ethernet1/64 Down, Ethernet1/63 Down ---
+n9kv-3 Interface Status:
+Ethernet1/64 - down
+Ethernet1/63 - down
+Ping Result:
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+
+--- Step 5: Ethernet1/64 Up, Ethernet1/63 Up ---
+n9kv-3 Interface Status:
+Ethernet1/64 - up
+Ethernet1/63 - up
+Ping Result:
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 7/7/7 ms
+
